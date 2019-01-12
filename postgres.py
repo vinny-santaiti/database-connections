@@ -7,6 +7,7 @@ dsn = """host='server' dbname='database' user='admin' password='1234' applicatio
 db_conn = psycopg2.connect(dsn)
 db_cur = db_conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
 sql = """select column from table where column = %s"""
+id = 4
 db_cur.execute(sql, (id,))
 result = db_cur.fetchall()
 for res in result:
