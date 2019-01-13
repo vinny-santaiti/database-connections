@@ -1,0 +1,6 @@
+psycopg2==2.7.6.1
+pymssql==2.1.4
+# error with cpython
+# pip install cpython
+# make sure freetds is installed
+# brew install freetds
