@@ -3,5 +3,5 @@ pymssql==2.1.4
 # make sure freetds is installed
 # brew install freetds
 Cython==0.29.13
-SQLAlchemy==1.3.0
+SQLAlchemy==1.3.6
 petl==0.26
