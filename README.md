@@ -3,7 +3,7 @@
 ## Docker MS SQL Server
 
 docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=<YourStrong@Passw0rd>" \
-   -p 1433:1433 --name sql1 \
+   -p 1433:1433 --name sqlserver \
    -d mcr.microsoft.com/mssql/server:2017-latest
 
 Connect using: 
@@ -11,7 +11,7 @@ Connect using:
 
 ## Docker Postgres SQL Server
 
-docker run --name psql -e POSTGRES_PASSWORD=docker \
+docker run --name postgresql -e POSTGRES_PASSWORD=docker \
   -d -p 5432:5432 \
   -v $HOME/docker/volumes/postgres:/var/lib/postgresql/data  postgres
   
