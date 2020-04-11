@@ -1,6 +1,6 @@
 # database-connections
 
-## Docker MS SQL Server
+## Docker Microsoft SQL Server
 
 ```
 docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=<YourStrong@Passw0rd>" \
@@ -9,9 +9,11 @@ docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=<YourStrong@Passw0rd>" \
 ```
 
 Connect using: 
-`/opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P "<YourNewStrong!Passw0rd>"`
+```
+/opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P "<YourNewStrong!Passw0rd>"
+```
 
-## Docker Postgres SQL Server
+## Docker PostgreSQL Server
 
 ```
 docker run --name my_postgres \
