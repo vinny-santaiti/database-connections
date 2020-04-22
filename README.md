@@ -26,7 +26,7 @@ docker run --name my_postgres \
   
 Connect using:
 ```
-psql -h localhost -U postgres -p 5432
+psql -h localhost -U postgres -p 5432 database_name
 CREATE ROLE myuser WITH LOGIN PASSWORD '123456' SUPERUSER;
 \du    --> show users
 \l     --> list db
