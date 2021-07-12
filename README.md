@@ -32,3 +32,9 @@ CREATE ROLE myuser WITH LOGIN PASSWORD '123456' SUPERUSER;
 \l     --> list db
 \q
 ```
+Mac os install PostgreSQL database adapter for Python 
+```
+export LDFLAGS="-L/usr/local/opt/openssl/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl/include"
+pip install psycopg2
+```
