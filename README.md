@@ -11,7 +11,8 @@ docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=<YourStrong@Passw0rd>" \
 
 Connect using: 
 ```
-/opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P "<YourNewStrong!Passw0rd>"
+/opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P "<YourNewStrong!Passw0rd>" \
+   -b -e -i script.sql
 ```
 
 ## Docker PostgreSQL Server
