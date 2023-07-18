@@ -21,7 +21,7 @@ def test_mogrify():
 	id_str = ','.join(str(i) for i in ids)
 	sql = """select column from table where column in (%(id_str)s);"""
 	data = {'id_str': id_str}
-	query = dm_cur.mogrify(sql, data).decode("utf-8")
+	query = db_cur.mogrify(sql, data).decode("utf-8")
 	db_cur.execute(query)
 	result = db_cur.fetchall()
 	for res in result:
