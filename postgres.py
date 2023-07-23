@@ -15,15 +15,11 @@ for res in result:
 db_conn.close()
 
 def test_mogrify():
-	db_conn = psycopg2.connect(dsn)
-	db_cur = db_conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
-	ids = [1, 2, 3, 4]
-	id_str = ','.join(str(i) for i in ids)
-	sql = """select column from table where column in (%(id_str)s);"""
-	data = {'id_str': id_str}
-	query = db_cur.mogrify(sql, data).decode("utf-8")
-	db_cur.execute(query)
-	result = db_cur.fetchall()
-	for res in result:
-		print(res)
-	db_conn.close()
+	"""table has 3 columns: serial pkey, col_1, col_2"""
+	conn = psycopg2.connect(dsn)
+	cur = conn.cursor()
+	data = [(1,2), (3,4), (5,6)]
+	values = ','.join(cur.mogrify("(DEFAULT,%s,%s)", x).decode("utf-8") for x in tuple(data))
+	cur.execute("INSERT INTO table VALUES " + values) 
+	conn.commit()
+	conn.close()
